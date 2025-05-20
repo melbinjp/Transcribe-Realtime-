@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real-Time Transcription</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/melbinjp/favicon/master/favicon.png">
@@ -12,25 +13,27 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Real-Time Transcription</h1>
-      <p>Transcribe audio in real-time with timestamps.</p>
-    </header>
+    <div class="top-panel">
+      <header>
+        <h1>Real-Time Transcription</h1>
+        <p>Transcribe audio in real-time with timestamps.</p>
+      </header>
 
-    <!-- Controls Section -->
-    <div class="controls">
-      <button id="start-btn" class="button">Start Transcription</button>
-      <button id="stop-btn" class="button" disabled>Stop Transcription</button>
-      <select id="language-select" class="dropdown">
-        <option value="en-GB" selected>English (UK)</option>
-        <option value="ml-IN">Malayalam</option>
-        <option value="hi-IN">Hindi</option>
-      </select>
-      <button id="download-btn" class="button" disabled>Download SRT</button>
+      <!-- Controls Section -->
+      <div class="controls">
+        <button id="start-btn" class="button">Start Transcription</button>
+        <button id="stop-btn" class="button" disabled>Stop Transcription</button>
+        <select id="language-select" class="dropdown">
+          <option value="en-GB" selected>English (UK)</option>
+          <option value="ml-IN">Malayalam</option>
+          <option value="hi-IN">Hindi</option>
+        </select>
+        <button id="download-btn" class="button" disabled>Download SRT</button>
+      </div>
     </div>
 
     <!-- Transcription Box -->
-    <div id="transcription-box" class="transcription-container">
+    <div class="transcription-container">
       <textarea id="transcription" placeholder="Transcribed text will appear here..." readonly></textarea>
     </div>
 

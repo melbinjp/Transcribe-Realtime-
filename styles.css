@@ -1,61 +1,95 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #f8f9fa; /* Light background */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  color: #212529; /* Dark text */
 }
 
 .container {
   width: 90%;
   max-width: 800px;
   background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px; /* Increased padding */
+  border-radius: 8px; /* Slightly softer corners */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); /* Softer shadow */
 }
 
-/* Header */
+/* Top Panel (Header and Controls) */
+.top-panel {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9ecef; /* Subtle separator */
+  margin-bottom: 20px;
+}
+
 header h1 {
-  margin: 0;
-  color: #333333;
+  margin: 0 0 10px 0; /* Adjusted margin */
+  color: #343a40; /* Slightly darker heading */
+  font-size: 28px; /* Larger heading */
 }
 
 header p {
   margin-top: 5px;
-  color: #666666;
+  color: #6c757d; /* Softer paragraph text */
+  font-size: 16px;
 }
 
 /* Controls */
 .controls {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 15px; /* Space between control elements */
+  align-items: center;
+  margin-top: 20px;
 }
 
 .button {
-  padding: 10px 20px;
-  margin-top: 10px;
+  padding: 12px 20px; /* Slightly larger padding */
   font-size: 16px;
   color: #ffffff;
-  background-color: #007bff;
+  background-color: #007bff; /* Primary button color */
   border: none;
-  border-radius: 5px;
+  border-radius: 6px; /* Softer corners */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker on hover */
 }
 
 .button:disabled {
-  background-color: #cccccc;
+  background-color: #ced4da; /* Lighter for disabled */
+  color: #6c757d;
+  cursor: not-allowed;
 }
 
+/* Special styling for Download SRT button */
+#download-btn {
+  background-color: #6c757d; /* Less prominent background */
+}
+
+#download-btn:not(:disabled) {
+  background-color: #28a745; /* Green when enabled */
+}
+
+#download-btn:not(:disabled):hover {
+  background-color: #1e7e34; /* Darker green on hover */
+}
+
+
 .dropdown {
-  padding: 10px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ced4da; /* Match button's disabled border */
+  background-color: #ffffff;
+  color: #495057;
 }
 
 /* Transcription Box */
@@ -63,18 +97,55 @@ header p {
   margin-top: 20px;
 }
 
-textarea {
-  width: calc(100% - 20px);
-  height: calc(50vh - 40px);
+textarea#transcription {
+  width: 100%; /* Full width */
+  height: 250px; /* Fixed height, adjust as needed */
+  padding: 15px;
+  border: 1px solid #e9ecef; /* Subtle border */
+  border-radius: 6px;
+  background-color: #f8f9fa; /* Light background for textarea */
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+textarea#transcription::placeholder {
+  color: #6c757d; /* Placeholder text color */
 }
 
 textarea[readonly] {
-  background-color: #f9f9f9;
-  border: none;
+  background-color: #e9ecef; /* Slightly different background when readonly */
+}
+
+/* Visual feedback for transcription in progress */
+.transcribing {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+    border-color: rgba(0, 123, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+    border-color: rgba(0, 123, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    border-color: rgba(0, 123, 255, 0.1);
+  }
 }
 
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef; /* Subtle separator */
+}
+
+footer p {
+  color: #6c757d; /* Lighter text for footer */
+  font-size: 14px; /* Smaller font size */
 }
