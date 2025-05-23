@@ -56,6 +56,7 @@ function formatTime(seconds) {
 
 // Start transcription
 function startTranscription() {
+    transcriptionBox.classList.add('transcribing'); // Add class for visual feedback
     transcript = ''; // Reset transcript
     transcriptionBox.value = ''; // Clear previous transcription
     startTime = new Date().getTime(); // Record start time
@@ -73,6 +74,7 @@ function startTranscription() {
 
 // Stop transcription
 function stopTranscription() {
+    transcriptionBox.classList.remove('transcribing'); // Remove class for visual feedback
     recognition.stop();
 
     startBtn.disabled = false;
