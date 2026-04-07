@@ -149,3 +149,56 @@ footer p {
   color: #6c757d; /* Lighter text for footer */
   font-size: 14px; /* Smaller font size */
 }
+
+/* Institutional Footer - Jules Standard */
+.hub-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    z-index: 100;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #3b82f6;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.back-link:hover {
+    transform: scale(1.05);
+}
+
+.footer-info {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hub-footer {
+        background: rgba(15, 23, 42, 0.7);
+        border-top-color: rgba(255, 255, 255, 0.05);
+    }
+    .back-link { color: #60a5fa; }
+    .footer-info { color: #94a3b8; }
+}
