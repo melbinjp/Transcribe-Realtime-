@@ -54,6 +54,11 @@
       <a href="https://wecanuseai.com/contact.html" style="color: inherit; text-decoration: none;">Contact</a>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('.copyright-year').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
 
